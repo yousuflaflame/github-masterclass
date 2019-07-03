@@ -1,0 +1,70 @@
+---
+title: GitHub Masterclass
+---
+<!DOCTYPE html>
+<html>
+
+<head>
+    <link rel="stylesheet" type="text/css" href="css/home.css"/>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.9/css/all.css" integrity="sha384-5SOiIsAziJl6AWe0HWRKTXlfcSHKmYV4RBF18PPJ173Kzn7jzMyFuTtk8JA7QQG1" crossorigin="anonymous">
+    <link rel="shortcut icon" href="images/favicon.ico"/>
+    <title>{{ page.title }}</title>
+</head>
+
+<body>
+
+    <section id="users">
+        <div class="container">
+            <div class="section-header">
+                <h1 role="section-heading">GitHub Masterclass</h1>
+                <h3><a href="https://github.com/ashie-princess/github-masterclass">Add yourself!</a></h3>
+            </div>
+
+            <div class="users-content">
+              {% for guest in site.users %}
+                <div class="users-item">
+                    <div class="users-profile">
+                        <img src="{{guest.image}}" alt="{{guest.name}}"/>
+                        <span class="emoji">{{guest.emoji}}</span>
+                    </div>
+                    <h2>{{guest.name}}</h2>
+                    <h4>{{guest.message}}</h4>
+                    <hr/>
+                    <div class="users-social">
+
+                      {% if guest.twitter %}
+                        <a href="https://twitter.com/{{guest.twitter}}" alt="Twitter"><i class="fab fa-twitter"></i></a>
+                      {% endif %}
+
+                      {% if guest.github %}
+                        <a href="https://github.com/{{guest.github}}" alt="GitHub"><i class="fab fa-github"></i></a>
+                      {% endif %}
+
+                      {% if guest.web %}
+                        <a href="http://{{guest.web}}" alt="Website"><i class="fas fa-globe"></i></a>
+                      {% endif %}
+
+                    </div>
+                </div>
+              {% endfor %}
+          </div>
+        </div>
+    </section>
+
+
+    <section class="join" id="join-large">
+        <div class="container">
+            <div class="join-content">
+                <h3 role="section-heading">Add yourself to the site!</h3>
+                <div class="flag">
+                        <img src="/images/flag.png" alt="">
+                </div>
+                <a href="{{site.masterclass.github}}" class="button button-white">Click Me!</a>
+            </div>
+        </div>
+    </section>
+
+
+</body>
+
+</html>
